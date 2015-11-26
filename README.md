@@ -13,6 +13,6 @@
   - [ ] 文件系统
 - [ ] Web库
   - [ ] Express
-- [ ] [命令行相关](./command-line/README.md)
-  - [x] [commander.js](./command-line/commander/README.md)
+- [ ] [命令行相关](./command-line)
+  - [x] [commander.js](./command-line/commander)
 
