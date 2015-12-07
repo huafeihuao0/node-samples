@@ -2,3 +2,9 @@
 	path = nodejs-demo
 	url = https://github.com/bsspirit/nodejs-demo
 	branch = express4
+[submodule "async_demo"]
+	path = async_demo
+	url = https://github.com/bsspirit/async_demo
+[submodule "express-example"]
+	path = express-example
+	url = https://github.com/sequelize/express-example

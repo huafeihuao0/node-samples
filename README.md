@@ -12,7 +12,9 @@
 - [ ] Nodejs进阶
   - [ ] 文件系统
 - [ ] Web库
-  - [ ] Express
+  - [ ] [Express](./express)
 - [ ] [命令行相关](./command-line)
   - [x] [commander.js](./command-line/commander)
-
+- 示例
+  - async_demo: 异步编程示例
+  - express-example: 在Express中使用Sequelize的示例
