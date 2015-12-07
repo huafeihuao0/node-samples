@@ -8,3 +8,12 @@
 [submodule "express-example"]
 	path = express-example
 	url = https://github.com/sequelize/express-example
+[submodule "node-express-mongoose-demo"]
+	path = node-express-mongoose-demo
+	url = https://github.com/madhums/node-express-mongoose-demo
+[submodule "node-addon-examples"]
+	path = node-addon-examples
+	url = https://github.com/nodejs/node-addon-examples
+[submodule "express-4.x-local-example"]
+	path = express-4.x-local-example
+	url = https://github.com/passport/express-4.x-local-example
