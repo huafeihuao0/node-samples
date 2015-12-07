@@ -1,0 +1,30 @@
+{
+  "name": "express-examples",
+  "version": "1.0.0",
+  "description": "Fast, unopinionated, minimalist web framework for node. [http://expressjs.com](http://expressjs.com)",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "cookie-session": "^1.2.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "jade": "^1.11.0",
+    "marked": "^0.3.5",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "multiparty": "^4.1.2",
+    "online": "0.0.1",
+    "redis": "^2.4.2",
+    "vhost": "^3.0.2"
+  }
+}
