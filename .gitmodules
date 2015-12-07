@@ -1,0 +1,4 @@
+[submodule "nodejs-demo"]
+	path = nodejs-demo
+	url = https://github.com/bsspirit/nodejs-demo
+	branch = express4
