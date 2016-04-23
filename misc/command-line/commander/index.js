@@ -77,7 +77,7 @@ program
     .description('部署指定环境')
     .action(function(env) {
     	console.log('正在部署 "%s"', env);
-    });    
+    });
 
 // 定义全局帮助信息(必须在 program.parse() 之前设置)。使用: ./index.js -h
 program.on('--help', function(){
