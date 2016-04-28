@@ -1,15 +1,16 @@
 var net = require('net');
+var os = require('os');
 
 // 用 `net.Server` 创建TCP或本地服务，它是 `EventEmitter`，包含以下事件。
 // `net.createServer` 是构造函数 `new net.Server()` 的工厂方法
 var server = net.createServer((socket) => {
   console.log('client connected');
+
   socket.on('end', () => {
     console.log('client disconnected');
   });
 
   socket.write(`hello tcp/socket ${os.EOL}`);
-  socket.pipe(c);
 
   socket.end(`goodbye ${os.EOL}`);
 })
@@ -19,18 +20,25 @@ var server = net.createServer((socket) => {
 .on('close', () => {
   console.log('server closes.');
 })
-// 当新连接创建时
+// 当新连接创建时。回调中的 socket 是 net.Socket 的实例
 .on('connection', (socket) => {
-  console.log(socket);
+  console.log('new connection is made');
 })
 // 发生错误时触发。并且随之触发 `close` 事件
 .on('error', (err) => {
-  // handle errors here
-  throw err;
+  // 当地址及端口被占用时错误代码为 `EADDRINUSE`
+  if(err.code === 'EADDRINUSE') {
+    console.log('Address in use, retrying...');
+    setTimeout(() => {
+      server.close();
+      //server.listen(PORT, HOST);
+    }, 1000);
+  }
 })
-// 调用 `server.listen` 后，服务器已绑定时触发
+// 调用 `server.listen` 后，服务器已绑定时触发。
+// 指定TCP服务器开始监听时所需执行的处理
 .on('listening', () => {
-  console.log('listening server ...');
+  console.log('begin listening ...');
 });
 
 // 签名：server.listen(port[, hostname][, backlog][, callback])
@@ -66,12 +74,15 @@ server.listen(() => {
 
 // 异步获取在服务器上的并发连接数
 server.getConnections((err, count) => {
-  if(!err) console.log(`the number of concurrent connections is ${count}`);
+  console.log(`the number of concurrent connections is ${count}`);
 })
 
-true && setTimeout(() => {
-  // 关闭连接
+false && setTimeout(() => {
+  // 显示指定服务器拒绝所有新的客户端连接。
+  // 使用close时，并不会断开所有现存的客户端连接。
+  // 同时会触发服务端的close事件
   server.close(() => {
+    // 可以在close方法的回调中处理TCP服务器关闭时所需执行的处理。也可以在服务器的close事件中处理
     console.log('close the server delay 3s.')
   });
 }, 3000);
