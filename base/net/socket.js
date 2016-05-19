@@ -18,19 +18,43 @@ var server = net.createServer({
   var address = socket.address();
   console.log('socket 地址：%j', address);
 
-  socket.on('data', (data) => {
+  // socket连接成功建立时触发
+  .on('connect', () => {
+    console.log('socket已建立连接');
+  })
+
+  // 收到数据时触发
+  .on('data', (data) => {
     // data是一个Buffer对象。使用 toString() 方法或设置数据编码 socket.setEncoding('utf8')
     console.log(data.toString());
 
     console.log(`已接收到的字节数：${socket.bytesRead}`);
-  });
+    console.log(`已发送的字节数：${socket.bytesWritten}`);
+  })
 
-  socket.on('end', () => {
+  // Emitted when the write buffer becomes empty. Can be used to throttle uploads.
+  .on('drain', () => {
+
+  })
+
+  .on('lookup', () => {
+
+  })
+
+  .on('timeout', () => {
+
+  })
+
+  // Emitted when the other end of the socket sends a FIN packet.
+  .on('end', () => {
     console.log('客户端连接已关闭');
-  });
+  })
+
+  // socket完全关闭时触发
+  .on('close', (had_error) => {
+    console.log(`socket是否发生错误? ${had_error}`);
+  })
+
 })
 
-// socket完全关闭时触发
-.on('close', (had_error) => {
-  console.log(`socket是否发生错误? ${had_error}`);
-})
+
