@@ -1,0 +1,9 @@
+<% if (!user) { %>
+	<p>Please <a href="/login">log in</a>.</p>
+<% } else { %>
+	<p>
+  <% if (message) { %>
+    <span style="color:green;"><%= message %></span>
+  <% } %>
+  <%= user.username %>. View your <a href="/profile">profile</a>.</p>
+<% } %>
