@@ -1,6 +1,9 @@
-### node-mysql
+## node-mysql
 
-- [github](https://github.com/felixge/node-mysql)
+https://github.com/felixge/node-mysql
+
+### 参考
+
 - [node-mysql-utilities](https://github.com/tshemsedinov/node-mysql-utilities)
 - [nodejs-mysql-boilerplate](https://github.com/ocastillo/nodejs-mysql-boilerplate)
 - [node-mysql-activerecord](https://github.com/martintajur/node-mysql-activerecord)

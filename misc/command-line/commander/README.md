@@ -9,7 +9,7 @@
 
 > 使用版本`^2.9.0`
 
-#### 安装 
+#### 安装
 
 `$ npm install commander --save`
 

@@ -1,0 +1,26 @@
+{
+  "name": "node-samples",
+  "version": "1.0.0",
+  "description": "node samples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huguangju/node-samples.git"
+  },
+  "keywords": [
+    "node.js",
+    "samples"
+  ],
+  "author": "huguangju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huguangju/node-samples/issues"
+  },
+  "homepage": "https://github.com/huguangju/node-samples#readme",
+  "dependencies": {
+    "node-mysql": "^0.4.2"
+  }
+}
