@@ -1,5 +1,6 @@
 var qs = require('querystring');
 
+// 发送HTTP响应
 exports.sendHtml = function(res, html) {
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Content-Length', Buffer.byteLength(html));
@@ -17,6 +18,7 @@ exports.parseReceivedData = function(req, cb) {
   });
 };
 
+// 渲染简单的表单（用于单条删除或归档单条记录）
 exports.actionForm = function(id, path, label) {
   var html = '<form method="POST" action="' + path + '">' +
     '<input type="hidden" name="id" value="' + id + '">' +

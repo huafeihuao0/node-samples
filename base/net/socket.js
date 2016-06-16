@@ -19,7 +19,7 @@ var server = net.createServer({
   console.log('socket 地址：%j', address);
 
   // socket连接成功建立时触发
-  .on('connect', () => {
+  socket.on('connect', () => {
     console.log('socket已建立连接');
   })
 
